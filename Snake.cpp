@@ -9,7 +9,10 @@ Snake::Snake()
     segments.push_back(Segment{ head_pos });
 }
 
-
+const Position& Snake::get_position() const
+{
+    return head_pos;
+}
 void Snake::render(Board& brd) const
 {
     brd.render(head_pos, head_color);

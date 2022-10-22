@@ -10,20 +10,13 @@ FruitManager::FruitManager(std::mt19937& mt, const Position& bounds)
 	y_dist = std::uniform_int_distribution<int>(0, bounds.y);
 }
 
-void FruitManager::update()
+void FruitManager::update(Board& brd)
 {
 	if (fruit_current_timer <= 0)
 	{
 		fruit_current_timer = fruit_spawn_timer;
-		std::cout << x_dist(mt) << " " << y_dist(mt) << std::endl;
-		fruits.emplace_back(Position{ x_dist(mt), y_dist(mt) });
+		//std::cout << x_dist(mt) << " " << y_dist(mt) << std::endl;
+		brd.add_content({ x_dist(mt), y_dist(mt) }, Board::ContentType::Fruit);
 	}
 	fruit_current_timer -= fruit_spawn_speed;
-}
-void FruitManager::render(Board& brd)
-{
-	for (const auto& fruit : fruits)
-	{
-		fruit.render(brd);
-	}
 }

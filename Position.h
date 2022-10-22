@@ -31,4 +31,9 @@ struct Position
 		y = other.y;
 		return *this;
 	}
+
+	bool operator==(const Position& other) const
+	{
+		return x == other.x && y == other.y;
+	}
 };

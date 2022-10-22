@@ -10,6 +10,7 @@ public:
 	Snake();
 	void render(Board& brd) const;
 	void update(float dt);
+	const Position& get_position() const;
 private:
 	class Segment
 	{

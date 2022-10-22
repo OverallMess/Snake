@@ -5,8 +5,7 @@ Fruit::Fruit(const Position& pos)
 	pos(pos)
 {
 }
-
-void Fruit::render(Board& brd) const
+const Position& Fruit::get_position() const
 {
-	brd.render(pos, color);
+	return pos;
 }

@@ -7,7 +7,7 @@ class Fruit
 {
 public:
 	Fruit(const Position& bounds);
-	void render(Board& brd) const;
+	const Position& get_position() const;
 private:
 	Position pos;
 	const sf::Color color{ sf::Color::Red };
