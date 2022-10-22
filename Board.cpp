@@ -34,7 +34,7 @@ void Board::render_contents()
 	}
 }
 
-void Board::add_content(const Position& pos, ContentType type)
+void Board::set_content(const Position& pos, ContentType type)
 {
 	std::cout << pos.x << " " << pos.y << std::endl;
 	if (pos.y >= 20 || pos.x >= 30) return;

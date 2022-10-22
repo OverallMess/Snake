@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <iostream>
 
 Game::Game()
 	:
@@ -39,6 +40,12 @@ void Game::update()
 	}
 	current_time -= .5f;
 	fruit_manager.update(board);
+
+	if (board.check_collision_with(snake.get_position(), Board::ContentType::Fruit))
+	{
+		snake.grow();
+		board.set_content(snake.get_position(), Board::ContentType::Empty);
+	}
 }
 
 void Game::poll_events()

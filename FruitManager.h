@@ -16,6 +16,6 @@ private:
 	std::uniform_int_distribution<int> y_dist;
 
 	static constexpr float fruit_spawn_timer = 100.f;
-	static constexpr float fruit_spawn_speed = 100.f;
+	static constexpr float fruit_spawn_speed = 1.f;
 	float fruit_current_timer = fruit_spawn_timer;
 };

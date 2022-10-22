@@ -3,10 +3,6 @@
 Snake::Snake()
 {
     segments.push_back(Segment{ head_pos });
-    segments.push_back(Segment{ head_pos });
-    segments.push_back(Segment{ head_pos });
-    segments.push_back(Segment{ head_pos });
-    segments.push_back(Segment{ head_pos });
 }
 
 const Position& Snake::get_position() const
@@ -44,6 +40,11 @@ void Snake::segments_render(Board& brd) const
     {
         seg.render(brd);
     }
+}
+
+void Snake::grow()
+{
+    segments.push_back(Segment{ head_pos });
 }
 
 Snake::Segment::Segment(const Position& position)

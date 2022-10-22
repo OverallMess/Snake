@@ -11,6 +11,7 @@ public:
 	void render(Board& brd) const;
 	void update(float dt);
 	const Position& get_position() const;
+	void grow();
 private:
 	class Segment
 	{

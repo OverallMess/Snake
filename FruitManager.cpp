@@ -16,7 +16,7 @@ void FruitManager::update(Board& brd)
 	{
 		fruit_current_timer = fruit_spawn_timer;
 		//std::cout << x_dist(mt) << " " << y_dist(mt) << std::endl;
-		brd.add_content({ x_dist(mt), y_dist(mt) }, Board::ContentType::Fruit);
+		brd.set_content({ x_dist(mt), y_dist(mt) }, Board::ContentType::Fruit);
 	}
 	fruit_current_timer -= fruit_spawn_speed;
 }
