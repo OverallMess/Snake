@@ -6,6 +6,8 @@ struct Position
 	int32_t x;
 	int32_t y;
 
+	Position() = default;
+
 	Position(int32_t x, int32_t y)
 		: x(x), y(y) {}
 

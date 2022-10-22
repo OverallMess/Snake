@@ -2,9 +2,10 @@
 
 Game::Game()
     :
-    window(std::make_unique<sf::RenderWindow>(sf::VideoMode(900, 600), "snake")),
+    window(std::make_unique<sf::RenderWindow>(sf::VideoMode(900, 600), "Snake")),
     board(*window),
-    mt(std::random_device{}())
+    mt(std::random_device{}()),
+    fruit_manager(mt, { (int)window->getSize().x / 30, (int)window->getSize().y / 30 }) // TODO: FIX
 {
     window->setFramerateLimit(60);
     //load_config_window();
@@ -24,9 +25,8 @@ void Game::run()
 void Game::render()
 {
     window->clear();
-
     snake.render(board);
-
+    fruit_manager.render(board);
     window->display();
 }
 
@@ -38,6 +38,8 @@ void Game::update()
         snake.update(0.0f);
     }
     current_time -= .5f;
+
+    fruit_manager.update();
 }
 
 void Game::poll_events()

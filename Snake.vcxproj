@@ -134,12 +134,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Fruit.cpp" />
+    <ClCompile Include="FruitManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Snake.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Fruit.h" />
+    <ClInclude Include="FruitManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Snake.h" />
