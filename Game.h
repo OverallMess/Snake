@@ -8,6 +8,7 @@
 #include "WindowConfig.h"
 #include "Board.h"
 #include "Position.h"
+#include "Snake.h"
 
 class Game
 {
@@ -23,12 +24,11 @@ private:
 	window_config config;
 	std::unique_ptr<sf::RenderWindow> window;
 	Board board;
+	Snake snake;
 
 	std::mt19937 mt;
 
-	Position pos{ 0, 0 };
-	Position dir{ 1, 0 };
-	static constexpr float pause = 1.f;
+	static constexpr float pause = 2.f;
 	float current_time = pause;
 };
 
